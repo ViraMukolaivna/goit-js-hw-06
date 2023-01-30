@@ -18,10 +18,13 @@ const ingredients = [
   'Condiments',
 ];
 
+const array = [];
 const ulElem = document.getElementById("ingredients");
 for (const ingredient of ingredients) {
   const liElem = document.createElement("li");
   liElem.classList.add("item");
   liElem.textContent = ingredient;
-  ulElem.appendChild(liElem);
+  array.push(liElem);
+
 }
+  ulElem.append(...array);

@@ -9,18 +9,23 @@
 // Для додавання стилів використовуй CSS - класи valid і
 // invalid, які ми вже додали у вихідні файли завдання.
 
-const refs = 
-{ validInput: document.getElementById("validation-input") };
-
+const validInput  = document.getElementById("validation-input") ;
+const dataLength = Number(validInput.dataset.length);
+function addRemove(removed, added) {
+    validInput.classList.remove(removed);
+    validInput.classList.add(added);
+}
 const changeColorBorder = (event) => {
-    if (event.target.value.length === 6) {
-        refs.validInput.classList.remove("invalid");
-        refs.validInput.classList.add("valid");
+    if (event.target.value.length === dataLength) {
+        // validInput.classList.remove("invalid");
+        // validInput.classList.add("valid");
+        addRemove("invalid", "valid");
     } else {
-        refs.validInput.classList.remove("valid");
-        refs.validInput.classList.add("invalid");
+        // validInput.classList.remove("valid");
+        // validInput.classList.add("invalid");
+        addRemove("valid", "invalid");
         }
         
 }; 
 
-refs.validInput.addEventListener("blur", changeColorBorder);
+validInput.addEventListener("blur", changeColorBorder);

@@ -21,8 +21,9 @@ form.addEventListener("submit", (event) => {
   const {
     elements: { email, password }
   } = event.currentTarget;
-    console.log(email.value, password.value);
-    if (email.value === "" || password.value === "") {
+   if (email.value.trim() === "" || password.value === "") {
         return alert(message);
     }
+  console.log(email.value, password.value);
+   event.currentTarget.reset();
 });

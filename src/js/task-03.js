@@ -28,11 +28,9 @@ const images = [
 ];
 
 const ulElem = document.querySelector(".gallery");
-const liElem = document.createElement("li");
-liElem.classList.add("item");
-const imgElem = document.createElement("img");
+ulElem.classList.add("item-list");
 
-const listImg = images.map((image) => `<li><img src = ${image.url} alt = ${image.alt}></li>`)
-  .join("");
+const listImg = images
+.map((image) => `<li><img src = ${image.url} alt = ${image.alt}></li>`)
+.join("");
 ulElem.insertAdjacentHTML("beforeend", listImg);
-console.log(ulElem);

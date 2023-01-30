@@ -12,9 +12,9 @@ const counter = document.getElementById("value");
 
 btnMinus.addEventListener("click", () => {
     counterValue -= 1;
-    counter.innerHTML = counterValue;
+    counter.textContent = counterValue;
 });
 btnPlus.addEventListener("click", () => {
     counterValue += 1;
-    counter.innerHTML = counterValue;
+    counter.textContent = counterValue;
 });
